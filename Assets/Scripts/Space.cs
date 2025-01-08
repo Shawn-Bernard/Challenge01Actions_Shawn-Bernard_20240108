@@ -1,21 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using TMPro;
 
 public class Space : MonoBehaviour
 {
     public GameObject Cube;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Space was pressed");
-            Actions.SpaceEvent?.Invoke();
-        }
-    }
 
     void Scale()
     {
