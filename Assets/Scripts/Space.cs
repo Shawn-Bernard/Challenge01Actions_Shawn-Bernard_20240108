@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Space : MonoBehaviour
 {
     public GameObject Cube;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,10 +17,11 @@ public class Space : MonoBehaviour
         }
     }
 
-    void SpaceTest()
+    void Scale()
     {
         //Adding to the scale of my cube by one each
         Cube.transform.localScale += new Vector3(1, 1, 1);
+        
 
         //If my cube size is my "max size"
         if (Cube.transform.localScale == new Vector3(5, 5, 5))
@@ -37,10 +33,12 @@ public class Space : MonoBehaviour
     }
     private void OnEnable()
     {
-        Actions.SpaceEvent += SpaceTest;
+        //Subscribe to the action
+        Actions.SpaceEvent += Scale;
     }
     private void OnDisable()
     {
-        Actions.SpaceEvent -= SpaceTest;
+        //Unsubscribe to the action
+        Actions.SpaceEvent -= Scale;
     }
 }
