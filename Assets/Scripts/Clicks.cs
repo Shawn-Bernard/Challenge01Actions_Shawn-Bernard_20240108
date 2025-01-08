@@ -18,7 +18,9 @@ public class Clicks : MonoBehaviour
     }
     void ClickCount()
     {
+        //Adding to my count by one 
         Count++;
+        //Changing the ui text to show my count
         CountText.text = $"Clicks {Count}";
     }
     private void OnEnable()
